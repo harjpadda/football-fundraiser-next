@@ -14,7 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   // Require user to be signed in
-  const session = await getServerSession(req, res, authOptions as any);
+  const session: any = await getServerSession(req, res, authOptions as any);
   if (!session?.user?.email) {
     return res.status(401).send("Please sign in to play.");
   }

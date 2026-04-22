@@ -33,16 +33,16 @@ type Props = {
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
-  const session = await getServerSession(ctx.req, ctx.res, authOptions as any);
+  const session: any = await getServerSession(ctx.req, ctx.res, authOptions as any);
 
-  if (!session) {
-    return {
-      redirect: {
-        destination: `/auth/signin?callbackUrl=${encodeURIComponent(ctx.resolvedUrl)}`,
-        permanent: false,
-      },
-    };
-  }
+  //if (!session) {
+  //  return {
+  //    redirect: {
+  //      destination: `/auth/signin?callbackUrl=${encodeURIComponent(ctx.resolvedUrl)}`,
+  //     permanent: false,
+  //    },
+  //  };
+  //}
 
   if ((session as any).user?.role !== "ADMIN") {
     return { notFound: true };

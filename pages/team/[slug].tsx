@@ -34,7 +34,7 @@ type Props = {
 
 export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
   // ✅ Require login
-  const session = await getServerSession(ctx.req, ctx.res, authOptions as any);
+  const session: any = await getServerSession(ctx.req, ctx.res, authOptions as any);
   if (!session) {
     return {
       redirect: {

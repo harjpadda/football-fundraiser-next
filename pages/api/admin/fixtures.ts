@@ -9,7 +9,7 @@ function asArray<T>(v: T | T[] | undefined): T[] {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const session = await getServerSession(req, res, authOptions as any);
+  const session: any = await getServerSession(req, res, authOptions as any);
 
   if (!session) return res.status(401).send("Unauthorized");
   if ((session as any).user?.role !== "ADMIN") return res.status(404).send("Not found");

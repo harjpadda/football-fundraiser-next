@@ -38,8 +38,8 @@ type Props = {
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
-  const session = await getServerSession(ctx.req, ctx.res, authOptions as any);
-  if (!session?.user?.email) {
+  const session: any = await getServerSession(ctx.req, ctx.res, authOptions as any);
+if (!session?.user?.email) {
     return {
       redirect: {
         destination: `/auth/signin?callbackUrl=${encodeURIComponent(ctx.resolvedUrl)}`,

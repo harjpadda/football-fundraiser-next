@@ -25,13 +25,6 @@ export default function TopNav({ title, subtitle, rightSlot }: Props) {
 
           <div className="flex items-center gap-2 w-full sm:w-auto">
             <Link
-              href="/"
-              className="flex-1 sm:flex-none text-center text-sm text-slate-200 border border-slate-700 rounded-xl px-3 py-2.5 hover:bg-slate-800 transition"
-            >
-              Home
-            </Link>
-
-            <Link
               href="/my-entries"
               className="flex-1 sm:flex-none text-center text-sm text-slate-200 border border-slate-700 rounded-xl px-3 py-2.5 hover:bg-slate-800 transition"
             >
